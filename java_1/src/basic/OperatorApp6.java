@@ -10,7 +10,7 @@ package basic;
 //ex) A+B+C              A=B=C
 //   -----→            ←----- 
 
-public class OperatorApp {
+public class OperatorApp6 {
 	public static void main(String[] args) {
 		//최우선 연산자 : 무조건 가장 먼저 연산 처리되는 연산자
 		// => () : 우선 처리 연산자, [] : 배열 연산자, . : 객체 연산자
