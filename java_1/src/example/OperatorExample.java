@@ -31,7 +31,7 @@ public class OperatorExample {
       int cnt1=20;
       int exp1=150000000;
     		  
-      long money=(long)(cnt>=14?exp1*0.75:exp1)*cnt1;
+      long money=(long)(cnt>=15?exp1*0.75:exp1)*cnt1;
       System.out.println("지불 금액 = "+money);
     
       
