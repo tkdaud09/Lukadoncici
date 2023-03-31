@@ -125,7 +125,7 @@ public class IfApp {
 			} else if(jumsu <=59 && jumsu >= 0) {
 				grade = "F";
 			}
-			
+		
 			System.out.println("[결과]"+jumsu+"점 = "+grade+"학점");
 		} else {
 			System.out.println("[결과]0~100 범위를 벗어난 비정상적인 점수가 입력 되었습니다.");
