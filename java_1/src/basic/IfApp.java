@@ -108,22 +108,22 @@ public class IfApp {
 		
 		//변수값이 0~100 범위의 유효값인지 아닌지를 구분하여 출력하는 프로그램 작성
 		// => 입력값에 대한 유효성 검증
-		if(jumsu >= 0 && jumsu <= 100) {
+		if(jumsu >= 0 && jumsu <= 100) { //미리 유효성 검증을 했기에 아래 수식이 가능
 			//System.out.println("[결과]0~100 범위의 정상적인 점수가 입력 되었습니다.");
 			
 			//변수값으로 등급을 구분하여 출력하는 프로그램 작성
 			//100 ~ 90 : A, 89 ~ 80 : B, 79 ~ 70 : C, 69 ~ 60 : D, 59 ~ 0 : F
-			String grade="";//학점을 저장하기 위한 변수
+			String grade="";//학점을 저장하기 위한 변수 > nullstring 설정 오류방지
 			if(jumsu <=100 && jumsu >= 90) {
 				grade = "A";
-			} else if(jumsu <=89 && jumsu >= 80) {
+			} else if(jumsu >= 80) {
 				grade = "B";
-			} else if(jumsu <=79 && jumsu >= 70) {
+			} else if(jumsu >= 70) {
 				grade = "C";
-			} else if(jumsu <=69 && jumsu >= 60) {
+			} else if(jumsu >= 60) {
 				grade = "D";
-			} else if(jumsu <=59 && jumsu >= 0) {
-				grade = "F";
+			} else {
+				grade = "F";//모든 조건이 거짓인 경우 무조건 실행
 			}
 		
 			System.out.println("[결과]"+jumsu+"점 = "+grade+"학점");
