@@ -31,13 +31,11 @@ public class ForExample {
 		//3의 배수의 합계에서 5의 배수의 합계를 뺀 결과값을 출력하세요.
 		//ex) 결과 = 633
 		int tot3=0, tot5=0;
-		for(int i=0;i<=100;i++) {
+		for(int i=1;i<=100;i++) {
 			if(i%3==0) tot3+=i;
 			if(i%5==0) tot5+=i;
-			System.out.println("결과 = "+(tot3-tot5));
 		}
-		
-
+		System.out.println("결과 = "+(tot3-tot5));
 		System.out.println("=========================================");
 		//구구단 중 7단을 화면에 출력하세요.
 		//ex) 7 * 1 = 7
