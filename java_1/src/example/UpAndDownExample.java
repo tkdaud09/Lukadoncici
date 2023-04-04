@@ -11,6 +11,22 @@ package example;
 // => 난수값을 10번 안에 맞추지 못한 경우 난수값이 출력되도록 작성
 public class UpAndDownExample {
 	public static void main(String[] args) {
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
