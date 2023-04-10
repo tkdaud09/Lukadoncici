@@ -19,7 +19,7 @@ public class Student {
 	// => 클래스 외부에서는 객체가 아닌 클래스를 사용하여 접근 가능
 	private static int total;//기본값을 초기값으로 사용할 경우 초기값 저장 생략 가능
 	//public static int total; //Student.total += student.getTot();
-	// 108,109행 글
+	// 108,109행 글글
 	
 	//생성자(Constructor) : 객체를 생성하면서 인스턴스 필드에 원하는 초기값을 저장
 	public Student() {
