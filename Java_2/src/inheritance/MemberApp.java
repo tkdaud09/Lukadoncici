@@ -8,10 +8,9 @@ public class MemberApp {
 		member1.setName("홍길동");
 		
 		member1.display();
-		System.out.println("===============================");
+		System.out.println("=============================================================");
 		Member member2=new Member("xyz789", "임꺽정");
 		member2.display();
-		System.out.println("===============================");
-		
+		System.out.println("=============================================================");
 	}
 }

@@ -6,9 +6,9 @@ public class Member {
 	private String name;
 	
 	public Member() {
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Member(String id, String name) {
 		super();
 		this.id = id;
@@ -35,5 +35,4 @@ public class Member {
 		System.out.println("아이디 = "+id);
 		System.out.println("이름 = "+name);
 	}
-	
 }
