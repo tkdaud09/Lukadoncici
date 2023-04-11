@@ -5,7 +5,7 @@ package inheritance;
 // => 모든 Java 클래스는 무조건 Object 클래스를 상속받아 사용 가능
 //Object 클래스 : 모든 Java 클래스의 최선조 클래스
 // => Object 클래스로 생성된 참조변수에는 모든 클래스로 생성된 객체 저장 가능
-public class Car /* exends Object */ {
+public class Car /* extends Object */ {
 	private String modelName;
 	private String userName;
 	
