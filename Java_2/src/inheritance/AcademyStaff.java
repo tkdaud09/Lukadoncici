@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance; 
 
 //직원정보(직원번호, 직원이름, 근무부서)를 저장하기 위한 클래스
 //=> 직원번호와 직원이름 관련 속성과 행위는 AcademyPerson 클래스를 상속받아 사용

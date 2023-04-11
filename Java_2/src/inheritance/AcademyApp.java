@@ -43,7 +43,7 @@ public class AcademyApp {
 			System.out.println("=================================================");
 		}
 			
-		
+		 
 		
 	}
 }
