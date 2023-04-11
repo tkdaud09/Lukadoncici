@@ -26,12 +26,23 @@ public class AcademyApp {
 		// => 객체의 형변환을 이용하여 배열 요소를 자식클래스의 객체를 일시적으로 저장하여
 		//    자식클래스의 메소드 호출 가능
 		
-		persons[0]=enw AcademyStudent(1000, "홍길동", "웹개발자 과정");
-		persons[1]=enw AcademyStudent(2000, "임꺽정", "Java 과목");
-		persons[2]=enw AcademyStudent(3000, "전우치", "운영관리팀");
-		persons[3]=enw AcademyStudent(4000, "일지매", "웹디자인 과정");
-		persons[4]=enw AcademyStudent(5000, "장길산", "경영회계팀");
+		persons[0]=new AcademyStudent(1000, "홍길동", "웹개발자 과정");
+		persons[1]=new AcademyInstructor(2000, "임꺽정", "Java 과목");
+		persons[2]=new AcademyStaff(3000, "전우치", "운영관리팀");
+		persons[3]=new AcademyStudent(4000, "일지매", "웹디자인 과정");
+		persons[4]=new AcademyStaff(5000, "장길산", "경영회계팀");
 		
+		// 배열 요소에 저장된 객체를 하나씩 제공받아 참조변수에 저장하여 일괄처리
+		for(AcademyPerson person: persons){
+			//오버라이드 선언된 메소드는 묵시적 객체 형변환에 의해 부모클래스의 메소드를 호출
+			//하지 않고 자식클래스의 메소드 호출
+			//참조변수에 저장된 자식클래스의 객체에 의히 자식클래스의 메소드가 선택 호
+			// => ★오버라이드에 의한 다형성★ : 객체 형변환에 의해 참조변수에 저장된 객체에
+			//    따라 다른 자식클래스의 메소드를 선택 호출
+			person.display();//person 묵시적형변환 자식클래스참조
+			System.out.println("=================================================");
+		}
+			
 		
 		
 	}
