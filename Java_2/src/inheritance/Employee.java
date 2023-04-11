@@ -5,7 +5,7 @@ package inheritance;
 public class Employee {
 	private int empNo;
 	private String empName;
-	
+		
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
@@ -31,6 +31,4 @@ public class Employee {
 	public void setEmpName(String empName) {
 		this.empName = empName;
 	}
-	
-	public void 
 }
