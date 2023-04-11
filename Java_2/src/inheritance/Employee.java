@@ -11,7 +11,9 @@ package inheritance;
 //2.final 제한자를 메소드에 사용하여 선언 - final 메소드
 //형식) 접근제한자 final 반환형 메소드명(자료형 매개변수명, ...) { }
 // => 자식클래스에 메소드를 오버라이드 선언하지 못하도록 제한하는 기능 제공
-
+//3.final 제한자를 클래스에 사용하여 선언 - final 클래스
+//형식) 접근제한자 final class 클래스명 { }
+// => final 클래스를 상속 받지 못하도록 제한하는 기능 제공
 
 //사원정보(사원번호, 사원이름)를 저장하기 위한 클래스
 // => 모든 사원 관련 클래스가 상속받아야 되는 부모클래스
@@ -28,7 +30,7 @@ public abstract class Employee {
 	//제공되는 필드값
 	//형식) public static final 자료형 변수명 = 초기값;
 	// => 상수명은 대문자로 작성하여 스네이크 표기법을 이용하여 작성하는 것을 권장
-	public static final double INCENTIVE_RATE = 1.5;
+	public static final double INCENTIVE_RATE = 1.5; // >> final static과 함께 상수표현사용
 		
 	public Employee() {
 		// TODO Auto-generated constructor stub
