@@ -32,9 +32,6 @@ public class AcademyApp {
 		persons[3]=enw AcademyStudent(4000, "일지매", "웹디자인 과정");
 		persons[4]=enw AcademyStudent(5000, "장길산", "경영회계팀");
 		
-				
-				
-		
 		
 		
 	}
