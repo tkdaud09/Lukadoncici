@@ -1,4 +1,4 @@
-package realization;
+package realization; 
 
 public interface Boat {
 	void navigate();

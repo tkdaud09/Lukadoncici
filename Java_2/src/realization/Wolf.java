@@ -1,4 +1,4 @@
-package realization;
+package realization; 
 
 //인터페이스에는 상수필드와 추상메소드만 선언 가능
 public interface Wolf {
