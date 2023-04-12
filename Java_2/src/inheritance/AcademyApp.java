@@ -61,7 +61,7 @@ public class AcademyApp {
 			person.display();//person 묵시적형변환 자식클래스참조
 			System.out.println("=================================================");
 		}
-			
+			//오버라이드 되있으면 묵시적 >> 안되있으면 명시적 (instanceof) 사용 해서 구별
 		 
 		
 	}
