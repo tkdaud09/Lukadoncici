@@ -1,4 +1,4 @@
-package association;
+package enumerate;
 
 import enumerate.EnumOne;
 import enumerate.EnumTwo;
