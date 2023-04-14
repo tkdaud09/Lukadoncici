@@ -1,6 +1,5 @@
 package xyz.itwill.app;
 
-
 //패키지(Package) : 같은 목적의 자료형(참조형)을 명확하게 구분하여 그룹화 하기 위한 단위
 // => Java 참조형 : 클래스(Class), 인터페이스(Interface), 열거형(Enum)
 // => Java 자료형을 보다 쉽게 관리하기 위해 패키지 사용
