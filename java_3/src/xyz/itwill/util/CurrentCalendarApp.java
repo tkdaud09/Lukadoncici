@@ -10,7 +10,7 @@ public class CurrentCalendarApp {
 		
 		//Calendar 객체에 저장된 날짜와 시간 중 [일]을 [1일]로 변경
 		//Calendar.set(int field, int value) : Calendar 객체에 저장된 날짜와 시간을 매개변수로
-		//전달받은 상수를 이용하야 날짜와 시간 중 원하는 대상을 변경하는 메소드
+		//전달받은 상수를 이용하여 날짜와 시간 중 원하는 대상을 변경하는 메소드
 		calendar.set(Calendar.DATE, 1);
 		
 		//Calendar 객체에 저장된 날짜와 시간 중 [요일]을 반환받아 저장
