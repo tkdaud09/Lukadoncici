@@ -1,6 +1,6 @@
 package xyz.itwill.util;
 
-import java.util.Random;
+import java.util.Random;  
 import java.util.UUID;
 
 //새로운 비밀번호를 생성하여 제공하는 프로그램 작성

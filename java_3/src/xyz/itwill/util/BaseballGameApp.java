@@ -1,6 +1,6 @@
 package xyz.itwill.util;
 
-import java.util.Random;
+import java.util.Random; 
 import java.util.Scanner;
 
 //숫자야구게임 : 0~9 범위의 정수 난수값을 3개 제공받아 키보드로 입력하여 맞추는 게임

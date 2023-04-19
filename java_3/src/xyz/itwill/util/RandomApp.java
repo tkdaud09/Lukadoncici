@@ -1,6 +1,6 @@
 package xyz.itwill.util;
 
-import java.util.Random;
+import java.util.Random; 
 
 //java.util 패키지 : 프로그램 작성에 유용한 기능을 제공하는 클래스(인터페이스)가 선언된 패키지
 
