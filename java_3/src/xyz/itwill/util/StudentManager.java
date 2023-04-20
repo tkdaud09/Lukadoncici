@@ -73,7 +73,7 @@ public class StudentManager {
 	}
 	
 	//저장매체에 저장된 모든 학생정보를 검색하여 반환하는 메소드
-	public List<Student> selectStudents(){
+	public List<Student> selectStudentList(){
 		return studentList;
 	}
 }
