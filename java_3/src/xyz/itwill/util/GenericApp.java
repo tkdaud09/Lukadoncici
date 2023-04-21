@@ -13,7 +13,7 @@ public class GenericApp {
 		//제네릭 타입 대신 사용될 Java 자료형과 동일한 자료형의 객체를 전달받아 필드값 변경
 		// => 제네릭 타입 대신 사용될 Java 자료형과 다른 자료형의 객체를 전달한 경우 에러 발생
 		generic1.setField(100);//오토박싱 : 정수값 >> Integer 객체
-		//generic1.setField(12.34);//오토박싱 : 정수값 >> Double 객체
+		//generic1.setField(12.34);//오토박싱 : 실수값 >> Double 객체
 		
 		Integer returnObject1=generic1.getField();
 		
