@@ -92,6 +92,4 @@ public class EventSourceGetApp extends Frame {
 			canvas.setBackground(Color.WHITE);	
 		}
 	}
-	
-	
 }
