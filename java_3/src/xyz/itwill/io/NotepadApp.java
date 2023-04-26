@@ -8,8 +8,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.JFrame;
@@ -107,6 +109,7 @@ public class NotepadApp extends JFrame {
 				filepath=openDialog.getDirectory()+openDialog.getFile();//선택된 파일의 경로 저장
 				
 				try {
+					//파일 경로를 제공바아 파일 입렵스트림 생성
 					BufferedReader in=new BufferedReader(new FileReader(filepath)); //문서파일이기에 FileReader(문자 하나하나 읽음) 사용 
 					                                                                //더 빠르기 위해 BufferedReader사용(readLine을 이용)엔터까지 문자 한번에 읽음
 				
@@ -129,7 +132,29 @@ public class NotepadApp extends JFrame {
 					JOptionPane.showMessageDialog(null, "프로그램에 문제가 발생 하였습니다");
 				}
 			} else if(eventSource==save) {
+				//저장 관련 파일 다이얼로그를 화면에 출력
+				saveDialog.setVisible(true);
 				
+				if(saveDialog.getFile()==null) return;//파일 선택을 취소한 경우 메소드 종료
+				
+				filepath=saveDialog.getDirectory()+saveDialog.getFile();
+				
+				try {
+					//파일 경로를 제공받아 파일 출력스트림 생성
+					BufferedWriter out=new BufferedWriter(new FileWriter(filepath));
+					
+					//JTextArea 컴퍼넌트의 모든 문자열을 반환받아 저장
+					String text=jTextArea.getText();
+					
+					//반환받은 문자열을 파일 출력스트림으로 전달하여 저장
+					out.write(text);
+					
+					out.close();
+					
+					setTitle(saveDialog.getFile()+" - Java 메모장");
+				} catch (IOException exception) {
+					JOptionPane.showMessageDialog(null, "프로그램에 문제가 발생 하였습니다");
+				}
 			} else if(eventSource==exit) {
 				System.exit(0);
 			}
