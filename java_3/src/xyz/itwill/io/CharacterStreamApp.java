@@ -41,7 +41,7 @@ public class CharacterStreamApp {
 			
 			//Writer.write(int b) : 매개변수로 제공받은 값을 문자데이타(2Byte)로 
 			//출력스트림에 전달하는 메소드
-			// => 문자데이타는 모니터 출력스트림에 존재하는 버퍼(Buffer : 임시 메모리)에 일정한  
+			// => 문자데이타는 출력스트림에 존재하는 버퍼(Buffer : 임시 메모리)에 일정한  
 			//크기만큼 저장하고 한번에 출력스트림으로 전달하여 출력 처리
 			out.write(readByte);
 			
