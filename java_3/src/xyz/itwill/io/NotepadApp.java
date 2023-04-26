@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -122,6 +123,8 @@ public class NotepadApp extends JFrame {
 					in.close();
 					
 					setTitle(openDialog.getFile()+" - Java 메모장");
+				} catch (FileNotFoundException exception) {
+					JOptionPane.showMessageDialog(null, "파일을 찾을 수 없습니다.");
 				} catch(IOException exception) {
 					JOptionPane.showMessageDialog(null, "프로그램에 문제가 발생 하였습니다");
 				}
