@@ -7,11 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
@@ -99,12 +103,32 @@ public class NotepadApp extends JFrame {
 				if(openDialog.getFile()==null) return;//파일 선택을 취소한 경우 메소드 종료
 				
 				//FileDialog.getDirectory() : 선택된 파일의 디렉토리 경로를 반환하는 메소드
-				filepath=openDialog.getDirectory()+openDialog.getFile();
+				filepath=openDialog.getDirectory()+openDialog.getFile();//선택된 파일의 경로 저장
 				
+				try {
+					BufferedReader in=new BufferedReader(new FileReader(filepath)); //문서파일이기에 FileReader(문자 하나하나 읽음) 사용 
+					                                                                //더 빠르기 위해 BufferedReader사용(readLine을 이용)엔터까지 문자 한번에 읽음
+				
+					jTextArea.setText("");//JTextArea 컴퍼넌트 초기화
+					
+					while(true) {
+						//파일에 저장된 값을 한줄씩 읽어 문자열로 반환받아 저장
+						String text=in.readLine();
+						if(text==null) break;
+						//변수에 저장된 문자열을 JTextArea 컴퍼넌트에 추가하여 출력
+						jTextArea.append(text+"\n");
+					}
+					
+					in.close();
+					
+					setTitle(openDialog.getFile()+" - Java 메모장");
+				} catch(IOException exception) {
+					JOptionPane.showMessageDialog(null, "프로그램에 문제가 발생 하였습니다");
+				}
 			} else if(eventSource==save) {
 				
 			} else if(eventSource==exit) {
-				
+				System.exit(0);
 			}
 		}
 	}
