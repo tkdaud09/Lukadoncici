@@ -96,8 +96,10 @@ public class NotepadApp extends JFrame {
 				openDialog.setVisible(true);
 				
 				//FileDialog.getFile() : 선택된 파일의 이름을 반환하는 메소드
-				if(openDialog.getFile()==null) return;
+				if(openDialog.getFile()==null) return;//파일 선택을 취소한 경우 메소드 종료
 				
+				//FileDialog.getDirectory() : 선택된 파일의 디렉토리 경로를 반환하는 메소드
+				filepath=openDialog.getDirectory()+openDialog.getFile();
 				
 			} else if(eventSource==save) {
 				
