@@ -110,7 +110,6 @@ public class ChatClientApp extends JFrame implements ActionListener {
 				System.exit(0);
 			}
 		}
-		
 	}
 	
 	public static void main(String[] args) {
@@ -128,10 +127,3 @@ public class ChatClientApp extends JFrame implements ActionListener {
 		}
 	}
 }
-
-
-
-
-
-
-
