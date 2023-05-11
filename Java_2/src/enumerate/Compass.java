@@ -26,7 +26,7 @@ public enum Compass {
 	
 	//상수필드의 자료형 또는 저장값을 변경하기 위한 필드값 반환 
 	// => 상수필드에 저장된 값을 반환하기 위한 메소드
-	public String getvalue() {
+	public String getvalue() { 
 		return value;
 	}
 }
