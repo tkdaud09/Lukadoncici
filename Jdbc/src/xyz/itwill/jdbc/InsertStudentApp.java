@@ -1,6 +1,7 @@
 package xyz.itwill.jdbc;
 
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 import oracle.jdbc.driver.OracleDriver;
 
@@ -39,10 +40,17 @@ public class InsertStudentApp {
 			//DriverManager 클래스가 관리할 수 있는 JDBC Driver 객체로 등록하는 메소드
 			// => 동일한 클래스로 생성된 Driver 객체가 DriverManager 클래스에 여러개 등록 가능
 			// => 불필요한 Driver 객체가 존재하여 성능의 저하 발생
-			DriverManager.registerDriver(new OracleDriver());
+			//DriverManager.registerDriver(new OracleDriver());
 			
+			//Class.forName(String className) 메소드를 호출하여 ClassLoader 프로그램을 이용하여
+			//OracleDriver 클래스를 읽어 메모리에 저장
+			// => OracleDriver 클래스의 정적영역에서 OracleDriver 클래스를 객체로 생성하여
+			//DriverManager 클래스의 JDBC Driver로 등록하는 메소드 호출
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-		} catch (Exception e) {
+		} catch (ClassNotFoundException e) {
+			// TODO: handle exception
+		}catch (SQLException e) {
 			// TODO: handle exception
 		}
 	}
