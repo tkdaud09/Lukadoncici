@@ -43,13 +43,13 @@ public class TransactionControlApp {
 			
 			//Connection.commit() : 커밋 처리 하는 메소드 - 전달된 SQL 명령이 실제 테이블에 적용
 			con.commit();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("[에러]프로그램에 예기치 못한 오류가 발생 되었습니다.");
 			try {
 				//Connection.rollback() : 롤백 처리하는 메소드 - 전달된 SQL 명령의 실행을 취소
 				con.rollback();
 			} catch (SQLException e1) {}	
-		}finally {
+		} finally {
 			try {
 				if(stmt!=null) stmt.close();
 				if(con!=null) con.close();
