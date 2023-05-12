@@ -37,7 +37,7 @@ public class SelectStudentApp {
 			// => false 반환 : ResultSet 커서 위치에 처리행이 없는 경우의 반환값
 			//                 - ResultSet 커서가 EOF(End Of File) 영역에 위치
 			// => true 반환 : ResultSet 커서 위치에 처리행이 있는 경우의 반환값
-			if(rs.next()) {//ResultSet 커서 위치에 처리행이 있는 경우
+			if(rs.next()) {//ResultSet 커서 위치에 처리행이 있는 경우☆
 				//System.out.println("[메세지]검색된 학생정보가 있습니다.");
 				
 				//검색된 다수의 학생정보가 저장된 ResultSet 객체를 처리하기 위한 반복문
@@ -45,23 +45,28 @@ public class SelectStudentApp {
 				// => if 구문에서 ResultSet 커서를 다음행으로 이미 이동하여 do~while구문 사용
 				do {
 					//ResultSet 커서가 위치한 처리행의 컬럼값을 하나씩 반환받아 저장
-					//ResultSet.getXXX(int columnIndex) 또는 ResultSet.getXXX(String columnLabel)
+					//☆ResultSet.getXXX(int columnIndex) 또는 ResultSet.getXXX(String columnLabel)☆
 					// => ResultSet 커서가 위치한 처리행의 컬럼값을 반환하는 메소드
 					// => XXX는 컬럼값을 반환받기 위한 Java 자료형을 표현
 					// => columnIndex : 검색행에서 검색대상을 순서대로 1부터 1씩 증가되는 정수값으로 표현
 					// => columnLabel : 검색행에서 검색대상의 이름을 문자열로 표현(ex.Address)
 					//int no=rs.getInt(1);//columnIndex
 					int no=rs.getInt("no");//columnLabel
-					String name=rs.getString("name");
-					String phone=rs.getString("phone");
-					String address=rs.getString("address");
-					Date birthday=rs.getDate("birthday");
+					String name=rs.getString("name");					
+					String phone=rs.getString("phone");					
+					String address=rs.getString("address");		
+					//Date birthday=rs.getDate("birthday");
+					//처리행의 컬럼값은 오라클 자료형에 상관없이 getString() 메소드를 호출하여
+					//문자열(String 객체)로 반환 가능
+					String birthdat=rs.getString("birthdat");
 					
 					System.out.println("학번 = "+no);
 					System.out.println("이름 = "+name);
 					System.out.println("전화번호 = "+phone);
 					System.out.println("주소 = "+address);
-					System.out.println("생년월일 = "+birthday);
+					//오라클의 날짜값을 문자열로 반환받으면 [yyyy-MM-dd HH:mm:ss] 형식으로 반환
+					// => 날짜만 출력되도록 문자열을 분리하여 출력
+					System.out.println("생년월일 = "+birthdat.substring(0, 10));
 					System.out.println("==================================================");
 				} while(rs.next());//ResultSet 커서를 다음행으로 이동 - 처리행이 있는 경우 반복문 실행, 처리행이 없는 경우 반복문 종료
 			}else {//ResultSet 커서 위치에 처리행이 없는 경우
