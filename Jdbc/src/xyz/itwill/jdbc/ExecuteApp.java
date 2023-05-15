@@ -23,7 +23,6 @@ public class ExecuteApp {
 		while(rs.next()) {
 			System.out.println("학번 = "+rs.getInt("no")+", 이름 = "+rs.getString("name"));
 		}
-		System.out.println("=============================================================");
 		ConnectionFactory.close(con, stmt, rs);
 		*/
 		
