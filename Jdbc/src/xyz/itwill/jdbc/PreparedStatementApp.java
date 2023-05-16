@@ -7,9 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 //PreparedStatement 객체 : 현재 접속중인 DBMS 서버에 SQL 명령을 전달하여 실행하기 위한 기능을 제공하는 객체
-//장점 : InParameter를 사용하여 SQL 명령에 Java 변수값을 문자값으로 포함하여 사용 가능
+//장점 : ★InParameter를 사용하여 SQL 명령에 Java 변수값을 문자값으로 포함하여 사용 가능★
 // => InParameter를 사용하여 가독성이 향상되고 유지보수의 효율성 증가
-// => InSQL 해킹 기술을 무효화 처리 - InParameter로 전달받은 사용자 입력값은 SQL 명령에서 무조건 문자값으로 처리
+// => ★InSQL 해킹 기술을 무효화 처리★ - InParameter로 전달받은 사용자 입력값은 SQL 명령에서 무조건 문자값으로 처리
 //단점 : 하나의 PreparedStatement는 저장된 하나의 SQL 명령만 전달하여 실행 가능
 public class PreparedStatementApp {
 	public static void main(String[] args) throws Exception {
@@ -46,7 +46,7 @@ public class PreparedStatementApp {
 		// => PreparedStatement 객체에 저장된 SQL 명령의 InParameter에 Java 변수값을 전달하는 메소드
 		// => XXX : InParameter에 전달하기 위한 값에 대한 Java 자료형
 		// => parameterIndex : InParameter의 위치값(첨자) - 1부터 1씩 증가되는 정수값
-		// => 반드시 모든 InParameter에 Java 변수값을 전달받아 완전한 SQL 명령 완성
+		// => ☆반드시 모든 InParameter에 Java 변수값을 전달받아 완전한 SQL 명령 완성☆
 		pstmt.setInt(1, no);
 		pstmt.setString(2, name);
 		pstmt.setString(3, phone);
@@ -91,7 +91,7 @@ public class PreparedStatementApp {
 		Connection con=ConnectionFactory.getConnection();
 		
 		String sql="select * from student where name=? order by no";
-		PreparedStatement pstmt=con.prepareStatement(sql);
+		PreparedStatement pstmt=con.prepareStatement(sql);//★★★
 		pstmt.setString(1, name);
 		
 		ResultSet rs=pstmt.executeQuery();

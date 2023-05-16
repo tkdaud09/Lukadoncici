@@ -36,6 +36,7 @@ public class SqlMinusApp {
 			//입력받은 SQL 명령을 전달하여 실행하고 실행결과를 반환받아 출력
 			
 			
+			
 		}
 		
 		ConnectionFactory.close(con, stmt, rs);
