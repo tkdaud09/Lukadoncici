@@ -4,9 +4,7 @@ package xyz.itwill.jdbc;
 // => 프로그램을 변경하지 않고 Properties 파일의 내용을 변경하여 프로그램 실행 결과 변경 가능
 // => 프로그램의 유지보수 효율성 증가
 // => Properties 파일에서 제공되는 값은 문자열만 가능
-// =>
-// =>
-
+// => Properties 파일에서는 영문자, 숫자, 일부 특수문자를 제외한 나머지 문자는 
 
 //user.properties 파일에 저장된 값을 얻어 출력하는 프로그램 작성
 public class PropertieApp {
