@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 //키보드로 SQL 명령을 입력받아 DBMS 서버에 전달하여 실행하고 실행결과를 출력하는 JDBC 프로그램 작성
@@ -16,7 +17,7 @@ public class SqlMinusApp {
 		BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
 
 		Connection con=ConnectionFactory.getConnection();
-		Statement stmt=con.createStatement();
+		Statement stmt=con.createStatement();//계속 전달받아 실행해야할때는 Prepare보다 그냥 Statement 사용
 		ResultSet rs=null;
 		
 		System.out.println("SQLMinus 프로그램을 실행합니다.(종료 : exit)");
@@ -33,10 +34,18 @@ public class SqlMinusApp {
 			//키보드 입력값이 [exit]인 경우 반복문 종료 - 프로그램 종료
 			if(sql.equalsIgnoreCase("exit")) break;
 			
-			//입력받은 SQL 명령을 전달하여 실행하고 실행결과를 반환받아 출력
-			
-			
-			
+			try {
+				//입력받은 SQL 명령을 전달하여 실행하고 실행결과를 반환받아 출력
+				if(stmt.execute(sql)) {//전달되어 실행된 SQL 명령이 SELECT 명령인 경우
+					
+				} else {//전달되어 실행된 SQL 명령이 INSERT,UPDATE,DELETE 명령인 경우
+					int rows=stmt.getUpdateCount();
+					System.out.println(rows+"개의 행을 "+sql.substring(0,6).toUpperCase()+"하였습니다.");
+					//SQL.Substring >> 6번째까지 toUpperCase >> 대문자로
+				}
+			} catch (SQLException e) {
+				System.out.println("SQL 오류 = "+e.getMessage());
+			}
 		}
 		
 		ConnectionFactory.close(con, stmt, rs);
