@@ -151,7 +151,7 @@ public class StudentDAOImpl extends JdbcDAO implements StudentDAO {
 		try {
 			con=getConnection();
 			
-			String sql="select * from student where name=?";
+			String sql="select * from student where name=? order by no";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, name);
 			
