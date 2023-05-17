@@ -28,7 +28,7 @@ public abstract class JdbcDAO {
 			pds.setInitialPoolSize(10);
 			pds.setMaxPoolSize(15);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 	}
 	
