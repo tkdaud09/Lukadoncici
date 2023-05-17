@@ -69,6 +69,6 @@ public abstract class JdbcDAO {
 			if(con != null) con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 }
