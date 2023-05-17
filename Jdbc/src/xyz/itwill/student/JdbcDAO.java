@@ -70,5 +70,5 @@ public abstract class JdbcDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} 
-	}
+	} 
 }
