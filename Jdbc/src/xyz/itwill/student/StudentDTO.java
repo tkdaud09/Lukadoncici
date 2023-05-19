@@ -6,7 +6,7 @@ package xyz.itwill.student;
 // => 필드의 이름은 컬럼의 이름과 동일하게 작성하는 것을 권장
 
 /*
-이름       널?       유형            
+이름       널?     	  유형            
 -------- -------- ------------- 
 NO       NOT NULL NUMBER(4)     
 NAME              VARCHAR2(50)  
