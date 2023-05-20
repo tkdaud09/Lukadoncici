@@ -1,6 +1,6 @@
 package xyz.itwill.student;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader; 
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class StudentCUIApp {
 	//키보드 입력스트림을 저장하기 위한 필드
 	private BufferedReader in;
+	
 	
 	public StudentCUIApp() {
 		//키보드로부터 문자열을 입력받기 위한 입력스트림을 생성하여 필드에 저장
