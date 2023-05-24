@@ -1,7 +1,5 @@
 package xyz.itwill.team05;
 
-import java.time.LocalTime;
-
 /*
  
 DESC STUDENT;
@@ -13,7 +11,6 @@ NAME             VARCHAR2(50)
 EMAIL            VARCHAR2(50)  
 PHONE            VARCHAR2(20)  
 ADDRESS          VARCHAR2(100) 
-
  
  */
 
@@ -77,14 +74,10 @@ public class StudentDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-@Override
-public String toString() {
-	return no + "\t" + name + "\t" + email + "\t" + phone + "\t" + address;
-	
-}
 
-public LocalTime getEntryTime() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public String toString() {
+		return "학번: " + no + " || 이름: " + name + " || 전화번호: " + phone + " || 주소: " + address + " || 이메일: " + email;
+
+	}
 }
