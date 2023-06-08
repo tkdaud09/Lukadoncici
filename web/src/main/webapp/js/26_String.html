@@ -12,14 +12,14 @@
 	<script type="text/javascript">
 	//매개변수에 전달된 문자값이 저장된 String 객체를 생성하여 변수에 저장
 	var str=new String("Hello, Javascript!!!");
-	alert("변수의 자료형 = "+typeof(str));//변수의 자료형 = object
+	//alert("변수의 자료형 = "+typeof(str));//변수의 자료형 = object
 	
 	//String.toString() : String 객체에 저장된 문자값을 반환하는 메소드
 	//alert("str.toString() = "+str.toString());//str.toString() = Hello, Javascript!!!
 	//String 객체가 저장된 변수를 출력하면 toString() 메소드 자동 호출
 	//alert("str = "+str);//str = Hello, Javascript!!!
 	
-	//String.length() : String 객체에 저장된 문자값의 문자 갯수를 저장한 프로퍼티
+	//String.length : String 객체에 저장된 문자값의 문자 갯수를 저장한 프로퍼티
 	//alert("str.length = "+str.length);//str.length = 20
 	
 	//String.charAt(index) : String 객체에 저장된 문자값에서 매개변수로 전달받은 첨자 위치의
@@ -59,7 +59,7 @@
 	var str="ABCDEFG";
 	//alert("변수의 자료형 = "+typeof(str));//변수의 자료형 = string
 	//string 변수에 저장된 문자값은 내부적으로 String 객체로 처리되므로 프로퍼티 및 메소드 사용 가능
-	//alert("str.length = "+str.length);//str.length = 7
+	alert("str.length = "+str.length);//str.length = 7
 	</script>
 </body>
 </html>
