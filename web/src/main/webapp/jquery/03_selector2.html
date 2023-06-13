@@ -25,26 +25,22 @@
 	</div>
 	
 	<script type="text/javascript">
-	//자식 선택자 : 검색된 부모태그에서 첫번째 깊이의 자식태그를 검섹하여 제공하는 선택자
-	//$("#subject > p").css({"font-size":"25px","font-weight":"bold"});
+	//자식 선택자 : 검색된 부모태그에서 첫번째 깊이의 자식태그를 검색하여 제공하는 선택자
+	//$("#subject > p").css({"font-size":"25px", "font-weight":"bold"});
 	
-	//#(selector).childer([selector]) : 선택자로 검색된 부모태그에서 첫번째 깊이의 자식태그를
+	//$(selector).children([selector]) : 선택자로 검색된 부모태그에서 첫번째 깊이의 자식태그를
 	//검색하여 jQuery 객체로 반환하는 메소드
-	// => children() 메소드의 매개변수에 선택자를 전달하지 않은 경우 모든 첫번째 깊이의
-	//자식태그를 jQuery 객체로 반환 
-	$("#subject").children("p").css({"font-size":"25px","font-weight":"bold"});
+	// => children() 메소드의 매개변수에 선택자를 전달하지 않은 경우 첫번째 깊이의 모든 
+	//자식태그를 jQuery 객체로 반환
+	$("#subject").children("p").css({"font-size":"25px", "font-weight":"bold"});
 	
-	//contents(모든자식들중) <>children(자식들중 하나)
-	//$("#subject").contents("p").css({"font-size":"25px","font-weight":"bold"});
 	
 	//후손 선택자 : 검색된 부모태그에서 모든 깊이의 후손태그를 검색하여 제공하는 선택자
-	//$("#subject p").css("color","green");
-	//$("#subject > p").css("color","green");//전체 글씨가 바뀜
+	//$("#subject p").css("color", "green");
 	
 	//$(selector).find(selector) : 선택자로 검색된 부모태그에서 모든 깊이의 후손태그를
-	//검새가형 jQuery 객체로 반환하는 메소드
-	$("#subject").find("p").css("color","green");
-	
+	//검색하여 jQuery 객체로 반환하는 메소드
+	$("#subject").find("p").css("color", "green");
 	</script>
 </body>
 </html>
