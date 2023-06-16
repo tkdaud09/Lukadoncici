@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//입력페이지(form.html)로부터 전달받은 입력값(회원정보)을 반환받아 클라이언트에게 전달하여 
+//★★입력페이지(form.html)로부터 전달받은 입력값(회원정보)을 반환받아 클라이언트에게 전달하여 
 //응답하는 서블릿
 // => 입력페이지의 form 태그를 이용하여 POST 방식으로 요청해야만 실행되는 서블릿
 @WebServlet("/join.itwill")
@@ -20,7 +20,7 @@ public class JoinServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 	
-		//서블릿을 GET 방식으로 요청한 경우 비정상적인 요청으로 클라이언트에게 에러코드를
+		//★서블릿을 GET 방식으로 요청한 경우 비정상적인 요청으로 클라이언트에게 에러코드를
 		//전달하거나 에러페이지로 이동되도록 처리
 		//HttpServletRequest.getMethod() : 서블릿을 요청한 요청방식(GET or POST)을 반환하는 메소드
 		if(request.getMethod().equals("GET")) {//서블릿을 비정상적으로 요청한 경우
@@ -39,8 +39,8 @@ public class JoinServlet extends HttpServlet {
 			//HttpServletResponse.sendRedirect(String url) : 클라이언트에게 301 상태코드와
 			//URL 주소를 전달하여 응답
 			// => 클라이언트는 전달받은 URL 주소로 브라우저의 요청 URL를 변경하여 웹프로그램을
-			//요청하여 실행결과를 응답받아 출력 - 페이지 이동(리다이렉트 이동) 
-			//response.sendRedirect("error.html");//에러페이지로 이동
+			//요청하여 실행결과를 응답받아 출력 - ★★페이지 이동(리다이렉트 이동)★★ 
+			response.sendRedirect("error.html");//에러페이지로 이동
 			response.sendRedirect("form.html");//입력페이지로 이동
 			return;
 			*/

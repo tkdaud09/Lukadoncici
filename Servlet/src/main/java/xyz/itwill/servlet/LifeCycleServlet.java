@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 //하지 않고 기존 서블릿 객체를 사용하여 요청 처리 메소드 호출
 // => WAS 프로그램이 종료되면 WAS 프로그램에 의해 생성되어 관리된 모든 서블릿 객체 소멸
 // => WAS 프로그램은 서블릿 객체를 관리하는 웹컨테이너(Web Container) 기능 제공
-//컨테이너(Container) : 프로그램 실행에 필요한 객체의 생명주기(Life Cycle)를 관리하는 프로그램
-// => 서블릿은 컨테이너에 의해 관리되는 컴퍼넌트(Component)
+//★컨테이너(Container)★ : 프로그램 실행에 필요한 객체의 생명주기(Life Cycle)를 관리하는 프로그램
+// => 서블릿은 컨테이너에 의해 관리되는 객체 ★컴퍼넌트★(Component)
 @WebServlet("/life.itwill")
 public class LifeCycleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,10 +26,12 @@ public class LifeCycleServlet extends HttpServlet {
 	
 	//서블릿 클래스로 객체를 생성하기 위한 생성자 
 	// => 객체를 생성하면서 실행될 명령 작성 - 초기화 처리
-	public LifeCycleServlet() {
+	public LifeCycleServlet() {//생성자
+		
 		//name="홍길동";
 		System.out.println("### LifeCycleServlet 클래스의 생성자 호출 - 객체 생성 ###");
 	}
+	//new 연산자를 안쓰고도 객체 생성 하는 방법이 리플렉션? 이 뭐 있다고 함
 	 
 	//서블릿 객체가 생성된 후 WAS 프로그램에 의해 자동으로 1번만 호출되는 메소드
 	// => 객체를 생성한 후 실행될 명령 작성 - 초기화 처리

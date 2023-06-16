@@ -31,7 +31,7 @@ public class FirstServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//클라이언트 요청에 대한 실행결과를 저장하기 위한 파일형태 변경 및 응답파일을 생성하기
 		//위한 출력스트림을 반환받아 저장
-		// => 클라이언트에게 URL 주소로 응답할 경우 응답파일로 제공하지 않으므로 생략 가능 
+		// => ★★클라이언트에게 URL 주소로 응답할 경우 응답파일로 제공하지 않으므로 생략 가능★★ 
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		
