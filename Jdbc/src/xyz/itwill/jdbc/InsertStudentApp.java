@@ -85,6 +85,7 @@ public class InsertStudentApp {
 			//String sql="insert into student values(1000,'홍길동','010-1234-5678','서울시 강남구','00/01/01')";
 			//String sql="insert into student values(2000,'임꺽정','010-7894-5612','수원시 월정구','02/05/08')";
 			String sql="insert into student values(3000,'전우치','010-1478-2589','인천시 상당구','23/05/12')";
+			//String sql="insert into student values(4000,'전우치','010-1478-2589','인천시 상당구','23/05/12')";
 			int rows=stmt.executeUpdate(sql);
 			
 			//5.반환받은 SQL 명령의 실행 결과값을 사용자에게 제공
