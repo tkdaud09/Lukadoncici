@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ★web.xml : 웹프로젝트가 WAS 프로그램에 의해 웹자원(WebContext)으로 변환될 때 필요한 정보를 
+<!-- web.xml : 웹프로젝트가 WAS 프로그램에 의해 웹자원(WebContext)으로 변환될 때 필요한 정보를 
 제공하기 위한 환경설정파일 - XSD(XML Schema Description) 파일에 선언된 태그(엘리먼트)만 사용 가능 -->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
 	<!-- display-name : 프로젝트 이름을 설정하기 위한 엘리먼트 -->
