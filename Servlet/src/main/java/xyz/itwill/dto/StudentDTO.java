@@ -76,4 +76,3 @@ public class StudentDTO {
 		this.birthday = birthday;
 	}
 }
-
