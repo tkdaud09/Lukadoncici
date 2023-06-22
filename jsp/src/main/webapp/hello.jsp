@@ -35,7 +35,7 @@
 	<hr>
 	<!-- HTML 주석 : 주석문이 클라이언트에게 전달 - 소스보기 가능 : 웹디자이너 -->
 	<%-- JSP 주석 : 주석문이 클라이언트에게 미전달 - 소스보기 불가능 : 웹프로그래머 --%>
-	<p>JSP(Java Server Page) : 서블릿보다 쉽게 웹프로그램 작성하기 위한 기술
+	<p>JSP(Java Server Page) : ★서블릿보다 쉽게 웹프로그램 작성하기 위한 기술★
 	- 스트립트 요소(Script Element), 지시어(Directive), 표준 액션 태그(Standard Action Tag)</p>
 	<hr>
 	<div id="displayDiv"><%=displayNow %></div>
