@@ -17,7 +17,7 @@
 		String pageName=(String)pageContext.getAttribute("pageName");
 		String requestName=(String)request.getAttribute("requestName");
 		String sessionName=(String)session.getAttribute("sessionName");
-		String applicationName=(String)application.setAttribute("applicationName");
+		String applicationName=(String)application.getAttribute("applicationName");
 	%>
 	<p>pageName = <%=pageName %></p>
 	<p>requestName = <%=requestName %></p>
