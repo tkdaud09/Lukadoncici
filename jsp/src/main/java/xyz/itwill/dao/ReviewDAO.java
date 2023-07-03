@@ -297,17 +297,3 @@ public class ReviewDAO extends JdbcDAO {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
