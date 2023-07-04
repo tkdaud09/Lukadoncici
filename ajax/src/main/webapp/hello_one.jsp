@@ -52,7 +52,8 @@
 		//XMLHttpRequest.readyState : XMLHttpRequest 객체의 준비상태 정보를 저장한 프로퍼티
 		// => XMLHttpRequest 객체의 준비상태 순차적으로 자동 변경
 		// => 0 : XMLHttpRequest 객체 생성, 1 : open() 메소드 호출 - 웹프로그램 요청 설정 
-		//, 2 : send 메소드() 호출 -  웹프로그램 요청, 3 : 웹프로그램 실행, 4 : 실행결과 응답   
+		//, 2 : send 메소드() 호출 -  웹프로그램 요청, 3 : 웹프로그램 실행, 4 : 실행결과 응답  
+		
 		xhr.onreadystatechange=changeHTML;
 		
 		//3.XMLHttpRequest 객체로 open() 메소드 호출 - 준비상태가 [1]로 자동 변경
