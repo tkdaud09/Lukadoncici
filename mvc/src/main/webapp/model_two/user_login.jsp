@@ -2,26 +2,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%-- 비로그인 상태의 사용자인 경우 - 사용자로부터 로그인정보를 입력받기 위한 JSP 문서 --%>
-<%-- => [로그인] 태그를 클릭한 경우 [user_login_action.jsp] 문서 요청 - 입력값 전달 --%>
+<%-- => [로그인] 태그를 클릭한 경우 [/login.do] 페이지 요청 - 입력값 전달 --%>
 <%-- 로그인 상태의 사용자인 경우 - 환영메세지를 클라이언트에게 전달하여 응답하는 JSP 문서 --%>
-<%-- => [회원목록] 태그를 클릭한 경우 [user_list.jsp] 문서 요청 --%>
-<%-- => [로그아웃] 태그를 클릭한 경우 [user_logout_action.jsp] 문서 요청 --%>
-<%-- => [회원등록] 태그를 클릭한 경우 [user_write.jsp] 문서 요청 - 관리자에게만 링크 제공 --%>
+<%-- => [회원목록] 태그를 클릭한 경우 [/list.do] 페이지 요청 --%>
+<%-- => [로그아웃] 태그를 클릭한 경우 [/logout.do] 페이지 요청 --%>
+<%-- => [회원등록] 태그를 클릭한 경우 [/writeform.do] 페이지 요청 - 관리자에게만 링크 제공 --%>
 <%
 	UserinfoDTO loginUserinfo=(UserinfoDTO)session.getAttribute("loginUserinfo");
 
-	String message=(String)session.getAttribute("message");
+	String message=(String)request.getAttribute("message");
 	if(message==null) {
 		message="";
-	} else {
-		session.removeAttribute("message");
 	}
 	
-	String userid=(String)session.getAttribute("userid");
+	String userid=(String)request.getAttribute("userid");
 	if(userid==null) {
 		userid="";
-	} else {
-		session.removeAttribute("userid");
 	}
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,7 +25,9 @@
 <head>
 <title>MVC</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel=stylesheet href="css/user.css" type="text/css">
+<%-- 요청 서블릿(컨트롤러)의 URL 주소 경로와 응답하는 JSP 문서의 경로가 서로 다르므로
+웹자원의 경로는 절대경로로 표현하는 것을 권장 --%>
+<link rel=stylesheet href="<%=request.getContextPath() %>/model_two/css/user.css" type="text/css">
 <script language="JavaScript">
 function userLogin() {
 	if ( f.userid.value == "" ) {
@@ -43,7 +41,7 @@ function userLogin() {
 		return;
 	}	
 	
-	f.action = "user_login_action.jsp";
+	f.action = "<%=request.getContextPath() %>/login.do";
 	f.submit();
 }
 </script>
@@ -107,10 +105,10 @@ function userLogin() {
 	  <table width=590 border=0 cellpadding=0 cellspacing=0>
 		  <tr>
 			<td align=center>
-				<button type="button" onclick="location.href='user_list.jsp';">회원목록</button>
-				<button type="button" onclick="location.href='user_logout_action.jsp';">로그아웃</button>
+				<button type="button" onclick="location.href='<%=request.getContextPath() %>/list.do';">회원목록</button>
+				<button type="button" onclick="location.href='<%=request.getContextPath() %>/logout.do';">로그아웃</button>
 				<% if(loginUserinfo.getStatus()==9) { %>
-				<button type="button" onclick="location.href='user_write.jsp';">회원등록</button>
+				<button type="button" onclick="location.href='<%=request.getContextPath() %>/writeform.do';">회원등록</button>
 				<% } %>
 			</td>
 		  </tr>
