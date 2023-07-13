@@ -18,7 +18,7 @@ import xyz.itwill.service.UserinfoService;
 //객체 반환 - 에러메세지와 아이디를 request 객체의 속성값으로 저장하여 JSP 문서에 제공
 public class LoginModel implements Action {
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)//★요청처리메소드
 			throws ServletException, IOException {
 		ActionForward actionForward=new ActionForward();
 		//클라이언트 요청에 대한 명령을 실행하면서 발생되는 모든 예외를 처리하기 위한 기능 구현
