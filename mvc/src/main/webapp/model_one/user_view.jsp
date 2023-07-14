@@ -1,45 +1,21 @@
-﻿﻿<%@page import="xyz.itwill.dao.UserinfoModelOneDAO"%>
-<%@page import="xyz.itwill.dto.UserinfoDTO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- 아이디를 전달받아 USERINFO 테이블에 저장된 회원정보를 검색하여 클라이언트에게 전달하여 
-응답하는 JSP 문서 - 로그인 상태의 사용자만 요청 가능한 JSP 문서  --%>
-<%-- => [수정] 태그를 클릭한 경우 [user_modify.jsp] 문서 요청 - 아이디 전달 --%>
-<%-- => [삭제] 태그를 클릭한 경우 [user_remove_action.jsp] 문서 요청 - 아이디 전달 --%>
-<%-- => [목록] 태그를 클릭한 경우 [user_list.jsp] 문서 요청 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%-- request 객체의 속성값으로 저장된 회원정보를 반환받아 클라이언트에게 전달하여 응답하는 JSP 문서 --%>
+<%-- => [수정] 태그를 클릭한 경우 [modifyform.do] 페이지 요청 - 아이디 전달 --%>
+<%-- => [삭제] 태그를 클릭한 경우 [remove.do] 페이지 요청 - 아이디 전달 --%>
+<%-- => [목록] 태그를 클릭한 경우 [list.do] 페이지 요청 --%>
 <%-- => [수정] 태그와 [삭제] 태그는 관리자에게만 링크 제공 --%>
-<%
-	UserinfoDTO loginUserinfo=(UserinfoDTO)session.getAttribute("loginUserinfo");
-	//비로그인 상태의 사용자인 경우 - 비정상적인 요청
-	if(loginUserinfo==null) {
-		response.sendRedirect("user_error.jsp");
-		return;
-	}	
-	
-	if(request.getParameter("userid")==null) {//전달값이 없는 경우 - 비정상적인 요청
-		response.sendRedirect("user_error.jsp");
-		return;
-	}
-	
-	String userid=request.getParameter("userid");
-	
-	UserinfoDTO userinfo=UserinfoModelOneDAO.getDAO().selectUserinfo(userid);
-	
-	if(userinfo==null) {//검색된 회원정보가 없는 경우 - 비정상적인 요청
-		response.sendRedirect("user_error.jsp");
-		return;
-	}
-%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>MVC</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel=stylesheet href="css/user.css" type="text/css">
+<link rel=stylesheet href="<c:url value="/model_two/css/user.css"/>" type="text/css">
 <script language="JavaScript">
 function userRemove(userid) {
 	if (confirm("정말로 삭제 하시겠습니까?") ) {
-		location.href='user_remove_action.jsp?userid='+userid;
+		location.href='<c:url value="/remove.do"/>?userid='+userid;
 	}
 }
 </script>
@@ -61,21 +37,19 @@ function userRemove(userid) {
 		  <tr>
 			<td width=100 align=center bgcolor="E6ECDE" height="22">아이디</td>
 			<td width=490 bgcolor="ffffff"  style="padding-left:10px;">
-				<%=userinfo.getUserid() %>
+				${userinfo.userid}
 			</td>
 		  </tr>
 		  <tr>
 			<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
 			<td width=490 bgcolor="ffffff"  style="padding-left:10px;">
-				<%=userinfo.getName() %>
+				${userinfo.name}
 			</td>
 		  </tr>
 		  <tr>
 			<td width=100 align=center bgcolor="E6ECDE" height="22">이메일</td>
 			<td width=490 bgcolor="ffffff"  style="padding-left:10px;">
-				<% if(userinfo.getEmail()!=null) { %>
-					<%=userinfo.getEmail() %>
-				<% } %>
+				${userinfo.email}
 			</td>
 		  </tr>		  
 	  </table>
@@ -84,11 +58,11 @@ function userRemove(userid) {
 	  <table width=590 border=0 cellpadding=0 cellspacing=0>
 		  <tr>
 			<td align=center>
-			<% if(loginUserinfo.getStatus()==9) { %>
-			<input type="button" value="수정" onClick="location.href='user_modify.jsp?userid=<%=userinfo.getUserid()%>';">
-			<input type="button" value="삭제" onClick="userRemove('<%=userinfo.getUserid()%>');">
-			<% } %>
-			<input type="button" value="목록" onClick="location.href='user_list.jsp';"> 
+			<c:if test="${loginUserinfo.status == 9 }">
+				<input type="button" value="수정" onClick="location.href='<c:url value="/modifyform.do"/>?userid=${userinfo.userid}';">
+				<input type="button" value="삭제" onClick="userRemove('${userinfo.userid}');">
+			</c:if>
+			<input type="button" value="목록" onClick="location.href='<c:url value="/list.do"/>';"> 
 			</td>
 		  </tr>
 	  </table>
