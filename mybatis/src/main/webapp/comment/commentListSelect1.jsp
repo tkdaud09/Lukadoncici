@@ -14,20 +14,20 @@
 <title>MYBATIS</title>
 <style type="text/css">
 table{
-	border: 1px solid black;
-	border-collapse: collapse;
+	border: 5px solid black;
+	border-collapse: separate;
 }
 
 td{
-	border: 1px solid black;
-	text-align: center;
-	padding: 3px;
+	border: 2px solid black;
+	text-align: left;
+	padding: 10px;
 }
 
 .no{ width: 100px; }
 .name{ width: 150px; }
-.content{ width: 250px; }
-.date{ width: 200px; }
+.content{ width: 300px; }
+.date{ width: 250px; }
 </style>
 </head>
 <body>
