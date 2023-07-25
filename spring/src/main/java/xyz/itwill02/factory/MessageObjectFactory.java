@@ -19,6 +19,6 @@ public class MessageObjectFactory {
 			object=new HiMessageObject();
 			break;	
 		}
-		return object;
+		return object; 
 	}
 }
