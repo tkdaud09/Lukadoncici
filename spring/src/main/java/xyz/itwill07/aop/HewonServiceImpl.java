@@ -13,7 +13,7 @@ public class HewonServiceImpl implements HewonService {
 		System.out.println("*** HewonServiceImpl 클래스의 aadHewon(Hewon hewon) 메소드 호출 ***");
 		hewonDAO.insertHewon(hewon);
 	}
-
+ 
 	@Override
 	public Hewon getHewon(int num) {
 		System.out.println("*** HewonServiceImpl 클래스의 getHewon(int num) 메소드 호출 ***");

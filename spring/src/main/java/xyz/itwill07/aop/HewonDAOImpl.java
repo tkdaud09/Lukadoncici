@@ -11,7 +11,7 @@ public class HewonDAOImpl implements HewonDAO {
 		System.out.println("*** HewonDAOImpl 클래스의 insertHewon(Hewon hewon) 메소드 호출 ***");
 		return 0;
 	}
-	
+	 
 	@Override
 	public Hewon selectHewon(int num) {
 		System.out.println("*** HewonDAOImpl 클래스의 selectHewon(int num) 메소드 호출 ***");

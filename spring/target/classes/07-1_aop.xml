@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	
+	 
 	<!-- 핵심관리모듈의 클래스를 Spring Bean으로 등록 -->
 	<bean class="xyz.itwill07.aop.HewonDAOImpl" id="hewonDAO"/>
 	<bean class="xyz.itwill07.aop.HewonServiceImpl" id="hewonService">
