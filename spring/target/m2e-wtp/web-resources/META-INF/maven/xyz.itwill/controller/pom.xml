@@ -12,7 +12,7 @@
 	해당 라이브러리	파일(폴더)을 삭제하고 이클립스 재실행 -->
 	<!-- 메이블 저장소(Maven Repository) : 라이브러리 파일이 저장된 인터넷상의 저장소 -->
 	<!-- => https://mvnrepository.com 사이트 참조 -->
-	 
+	
 	<!-- 메이븐을 사용하여 현재 프로젝트를 배포하기 위해 배포파일을 생성할 정보를 제공하기 위한 엘리먼트 -->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>xyz.itwill</groupId>
@@ -61,8 +61,8 @@
 		</dependency>
 				
 		<!-- AspectJ => Spring AOP 기능을 제공하기 위한 라이브러리 -->
-		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-		<!-- => AspectJ 컴파일러로 생성된 Proxy 클래스를 실행하기 위한 라이브러리 -->		
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+		<!-- => AspectJ 컴파일러로 생성된 Proxy 클래스를 실행하기 위한 라이브러리 -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
@@ -70,7 +70,8 @@
 		</dependency>	
 		
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-		<!-- => AspectJ 컴파일러로 핵심관리 코드와 횡단관심코드가 결합된 클래스(Proxy 클래스)를 생성하기 위한 라이브러리 -->
+		<!-- => AspectJ 컴파일러로 핵심관심코드와 횡단관심코드가 결합된 클래스(Proxy 클래스)를
+		생성하기 위한 라이브러리 -->
 		<dependency>
 		    <groupId>org.aspectj</groupId>
 		    <artifactId>aspectjweaver</artifactId>
@@ -170,7 +171,7 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<!-- => 클래스 작성에 필요한 메소드를 자동으로 생성하여 제공하는 기능의 라이브러리 -->
+		<!-- => 클래스 작성에 필요한 메소드를 자동으로 생성하여 제공하는 라이브러리 -->
 		<dependency>
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
@@ -178,24 +179,40 @@
 		    <scope>provided</scope>
 		</dependency>
 
-	
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
-	<!-- => Spring Contex의 확장 기능을 제공하는 라이브러리 -->
-	<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-context-support</artifactId>
-	    <version>${org.springframework-version}</version>
-	</dependency>
-	
-	<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
-	<!-- => Java Mail 기능을 제공하는 라이브러리 -->
-	<dependency>
-	    <groupId>com.sun.mail</groupId>
-	    <artifactId>javax.mail</artifactId>
-	    <version>1.6.2</version>
-	</dependency>
-	
-	</dependencies>	
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<!-- => Spring Context의 확장 기능을 제공하는 라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+		<!-- => Java Mail 기능을 제공하는 라이브러리 -->
+		<dependency>
+		    <groupId>com.sun.mail</groupId>
+		    <artifactId>javax.mail</artifactId>
+		    <version>1.6.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
+		<!-- => Oracle DBMS Server를 사용하기 위한 Oracle Driver 관련 기능을 제공하는 라이브러리 -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc11</artifactId>
+		    <version>23.2.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<!-- => SpringDAO 관련 기능을 제공하는 라이브러리 - DataSource 관련 클래스 제공 -->
+		<!-- => 라이브러리 의존 관계에 의해 spring-tx 라이브러리(트렌젝션 처리) 빌드 처리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+
+	</dependencies>
 	
     <build>
         <plugins>
