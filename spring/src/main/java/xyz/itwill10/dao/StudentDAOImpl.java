@@ -40,7 +40,7 @@ public class StudentDAOImpl implements StudentDAO {
 	//전달하여 실행하고 실행결과를 Java 객체(값)으로 반환받기 위해 SqlSession 객체 필요
 	// => SqlSession 객체를 저장할 수 있는 필드를 선언하여 스프링 컨테이너가 관리하는
 	//Spring Bean를 제공받아 의존성 주입(DI)
-	// => 매개변수가 선언된 생성자를 작성하여 @Autowired 어노테이션을 사용하여 의존성 주입 - 순환참조 방지  
+	// => 매개변수가 선언된 생성자를 작성하여 @Autowired 어노테이션을 사용하여 의존성 주입 - ☆순환참조 방지☆  
 	private final SqlSession sqlSession;
 	
 	@Override
