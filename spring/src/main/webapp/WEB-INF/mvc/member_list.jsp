@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>SPRING</title>
 </head>
-<body>
+<body> 
 	<h1>회원목록</h1>
 	<hr>
 	<c:forEach var="member" items="${memberList}">
